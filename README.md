@@ -13,4 +13,4 @@ E-PrescribingSystem is a web application developed using React for the frontend 
 1. Clone the repository:
 
 ```bash
-git clone (https://github.com/pixelm123)https://github.com/pixelm123/E-PrescribingSystem.git
+git clone https://github.com/pixelm123/E-PrescribingSystem.git
