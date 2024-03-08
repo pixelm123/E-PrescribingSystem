@@ -10,10 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\components\Home\" />
-    <Folder Include="src\components\Login\" />
-    <Folder Include="src\components\About\" />
-    <Folder Include="src\components\FAQ\" />
-    <Folder Include="src\components\Services\" />
-    <Folder Include="src\components\Register\" />
+    <Folder Include="src\components\Admin\" />
+    <Folder Include="src\components\Doctor\" />
+    <Folder Include="src\components\Nurse\" />
   </ItemGroup>
 </Project>

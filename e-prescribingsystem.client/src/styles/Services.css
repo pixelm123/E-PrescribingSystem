@@ -1,0 +1,41 @@
+.services {
+    padding: 80px;
+}
+
+.services-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .services-content h2 {
+        color: #1496E4;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+.service {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.service-icon {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+    .service-icon img {
+        width: 50px;
+    }
+
+.service-details h3 {
+    color: #1496E4;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-details p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+}

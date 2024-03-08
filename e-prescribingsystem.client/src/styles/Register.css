@@ -1,0 +1,71 @@
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+    .register-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #1496e4; /* MediSyncRx blue */
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #1496e4;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+.error {
+    color: #bf1b2c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1496e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #1285bf;
+    }
+
+/* Styling for the link to navigate back to the login page */
+.register-container p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+    .register-container p a {
+        color: #1496e4;
+        text-decoration: none;
+    }
+
+        .register-container p a:hover {
+            text-decoration: underline;
+        }

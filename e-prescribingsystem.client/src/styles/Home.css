@@ -1,0 +1,190 @@
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        nav ul li a {
+            color: #1496E4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+/* Hero Styles */
+.hero {
+    background-color: #fff;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+    .hero-content h1 {
+        color: #1496E4;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        color: #60A412;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+/* Features Styles */
+.features {
+    padding: 80px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    flex-basis: 23%;
+    text-align: center;
+}
+
+    .feature img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .feature h3 {
+        color: #1496E4;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .feature p {
+        color: #333;
+    }
+
+/* How It Works Styles */
+.how-it-works {
+    padding: 80px;
+}
+
+.step-by-step-guide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step {
+    text-align: center;
+}
+
+    .step h3 {
+        color: #1496E4;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .step p {
+        color: #333;
+    }
+
+    .step:not(:last-child)::after {
+        content: '?';
+        color: #1496E4;
+        margin-left: 20px;
+    }
+
+/* Call to Action Styles */
+.cta {
+    background-color: #1496E4;
+    color: #fff;
+    padding: 80px;
+    text-align: center;
+}
+
+    .cta h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .cta p {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .cta button {
+        background-color: #60A412;
+        color: #fff;
+        border: none;
+        padding: 15px 40px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .cta button:hover {
+            background-color: #54AFE6;
+        }
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+    .social-media a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+/* Additional Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}

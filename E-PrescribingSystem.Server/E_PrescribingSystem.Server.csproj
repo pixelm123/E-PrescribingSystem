@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\assets\index-B1gVyoyO.css" />
+    <Content Remove="wwwroot\assets\index-Du0cf4gn.js" />
+    <Content Remove="wwwroot\icon-allergy-alert.png" />
+    <Content Remove="wwwroot\icon-electronic-prescription.jpg" />
+    <Content Remove="wwwroot\icon-medication-history.png" />
+    <Content Remove="wwwroot\icon-pharmacy-integration.png" />
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\Logo.png" />
+    <Content Remove="wwwroot\vite.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>6.*-*</Version>
@@ -31,7 +43,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <None Include="wwwroot\assets\index-B1gVyoyO.css" />
+    <None Include="wwwroot\assets\index-Du0cf4gn.js" />
+    <None Include="wwwroot\icon-allergy-alert.png" />
+    <None Include="wwwroot\icon-electronic-prescription.jpg" />
+    <None Include="wwwroot\icon-medication-history.png" />
+    <None Include="wwwroot\icon-pharmacy-integration.png" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\Logo.png" />
+    <None Include="wwwroot\vite.svg" />
   </ItemGroup>
 
 </Project>

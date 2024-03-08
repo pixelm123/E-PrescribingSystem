@@ -1,27 +1,68 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home/Home';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import FAQ from './components/FAQ/FAQ';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './components/Home/Home'; 
+import About from './components/Home/About';
+import Services from './components/Home/Services';
+import FAQ from './components/Home/FAQ';
+import Register from './components/Home/Register';
+import Login from './components/Home/Login';
+import AdminDashboard from './components/Admin/AdminDashboard';
+import NurseDashboard from './components/Nurse/NurseDashboard';
+import DoctorDashboard from './components/Doctor/DoctorDashboard';
+import PharmacistDashboard from './components/Pharmacist/PharmacistDashboard';
+import { ToastContainer } from 'react-toastify';
+
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home />,
+    },
+    {
+        path: '/about',
+        element: <About />,
+    },
+    {
+        path: '/services',
+        element: <Services />,
+    },
+    {
+        path: '/faq',
+        element: <FAQ />,
+    },
+    {
+        path: '/register',
+        element: <Register />,
+    },
+    {
+        path: '/login',
+        element: <Login />,
+    },
+    {
+        path: '/admin/dashboard',
+        element: <AdminDashboard />,
+    },
+    {
+        path: '/nurse/dashboard',
+        element: <NurseDashboard />,
+    },
+    {
+        path: '/doctor/dashboard',
+        element: <DoctorDashboard />,
+    },
+    {
+        path: '/pharmacist/dashboard',
+        element: <PharmacistDashboard />,
+    },
+]);
+
 
 function App() {
     return (
-        <Router>
-            <div>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
-                    <Route path="/services" component={Services} />
-                    <Route path="/faq" component={FAQ} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={Register} />
-                </Switch>
-            </div>
-        </Router>
+        <>
+            <RouterProvider router={router} />
+            <ToastContainer position='top-center' />
+        </>
     );
 }
 

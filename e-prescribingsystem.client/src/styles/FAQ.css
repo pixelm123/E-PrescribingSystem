@@ -1,0 +1,38 @@
+.faq {
+    padding: 80px;
+}
+
+.faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .faq-content h2 {
+        color: #1496E4;
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+.faq-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.faq-item {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+    .faq-item h3 {
+        color: #1496E4;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .faq-item p {
+        color: #333;
+        font-size: 18px;
+        line-height: 1.5;
+    }
