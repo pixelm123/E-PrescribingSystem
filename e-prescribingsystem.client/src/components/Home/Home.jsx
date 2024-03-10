@@ -26,7 +26,7 @@ const Home = () => {
 
 
                     <div className="feature">
-                        <img src="/icon-for-drug-interaction-checks.jpg" alt="Automated Drug Interaction Checks" />
+                        <img src="/icon-for-drug-interaction-check.jpg" alt="Automated Drug Interaction Checks" />
                         <h3>Automated Drug Interaction Checks</h3>
                         <p>Ensure patient safety with automated drug interaction checks.</p>
                     </div>
