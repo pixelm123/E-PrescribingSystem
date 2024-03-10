@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 /* Header Styles */
 header {
-    background-color: #1496E4;
-    color: white;
+    background-color: #fff;
+    color: #1496E4;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -26,47 +26,57 @@ header {
 }
 
     .logo img {
-        width: 50px;
-        margin-right: 10px;
+        width: 100px; /* Increase logo size */
     }
 
-.nav-links ul {
+nav ul {
     list-style-type: none;
     display: flex;
 }
 
-.nav-links li {
+nav li {
     margin-right: 20px;
 }
 
-.nav-links a {
-    color: white;
+nav a {
+    color: #1496E4;
     text-decoration: none;
+    font-size: 1.2rem; /* Increase font size */
     transition: color 0.3s ease;
 }
 
-    .nav-links a:hover {
+    nav a:hover {
         color: #BF1B2C;
     }
 
 /* Hero Section Styles */
 .hero {
-    background-image: url('/Home.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background-color: #fff;
+    color: #1496E4;
     padding: 100px 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    .hero img {
+        width: 50%; /* Adjust image size */
+    }
+
+.hero-content {
+    width: 50%;
+    padding: 0 50px; /* Add padding */
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-}
+    .hero-content h1 {
+        color: #1496E4; /* Blue color */
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        color: #60A412; /* Green color */
+        font-size: 1.2rem;
+    }
 
 /* Features Section Styles */
 .features {
@@ -76,16 +86,20 @@ header {
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid columns */
     grid-gap: 30px;
 }
 
 .feature {
-    background-color: white;
-    padding: 30px;
+    background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
+    .feature img {
+        width: 50%; /* Adjust image size */
+    }
 
     .feature h3 {
         color: #1496E4;

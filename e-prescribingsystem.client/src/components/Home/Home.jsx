@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from './Layout';
-import "../../styles/Home.css";
 
 const Home = () => {
     return (
         <Layout>
             <section className="hero">
-                <img src="/Home.jpg" alt="Home" />
                 <div className="hero-content">
                     <h1>Revolutionize Your Prescription Process</h1>
                     <p>Efficiency, accuracy, and patient safety at your fingertips.</p>
                 </div>
+                <img src="/Home.jpg" alt="Home" />
             </section>
 
             <section className="features">
@@ -50,21 +49,26 @@ const Home = () => {
             <section className="how-it-works">
                 <h2>How It Works</h2>
                 <div className="step-by-step-guide">
-
                     <div className="step">
                         <h3>Step 1: Log In</h3>
                         <p>Sign in to your account using your credentials.</p>
                     </div>
+
+                    <img src="/Arrow-icon.jpg" alt="Arrow" className="arrow" />
 
                     <div className="step">
                         <h3>Step 2: Create Prescription</h3>
                         <p>Create a new prescription for your patient.</p>
                     </div>
 
+                    <img src="/Arrow-icon.jpg" alt="Arrow" className="arrow" />
+
                     <div className="step">
                         <h3>Step 3: Verify Information</h3>
                         <p>Review and verify patient information and medication details.</p>
                     </div>
+
+                    <img src="/Arrow-icon.jpg" alt="Arrow" className="arrow" />
 
                     <div className="step">
                         <h3>Step 4: Send Prescription</h3>

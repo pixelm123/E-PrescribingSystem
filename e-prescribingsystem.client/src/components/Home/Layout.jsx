@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import "../../styles/Home.css";
-
 const Layout = ({ children }) => {
     return (
         <div>
@@ -36,14 +34,6 @@ const Layout = ({ children }) => {
                     <p>&copy; 2024 MediSynRx All rights reserved.</p>
                 </div>
             </footer>
-
-            <section className="cta">
-                <h2>Get Started Today</h2>
-                <p>Join the revolution in prescription management. Sign up now!</p>
-                <Link to="/register">
-                    <button>Get Started</button>
-                </Link>
-            </section>
         </div>
     );
 };
