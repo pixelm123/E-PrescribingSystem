@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Layout from './Layout';
 import "../../styles/Services.css";
 
 const Services = () => {
     return (
-        <div>
-            <Header />
+        <Layout>
             <section className="services">
                 <div className="services-content">
                     <h2>Our Services</h2>
@@ -48,8 +46,7 @@ const Services = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
-        </div>
+        </Layout>
     );
 };
 

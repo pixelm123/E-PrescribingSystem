@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Layout from './Layout';
 import "../../styles/FAQ.css";
 
 const FAQ = () => {
     return (
-        <div>
-            <Header />
+        <Layout>
             <section className="faq">
                 <div className="faq-content">
                     <h2>Frequently Asked Questions</h2>
@@ -31,8 +29,7 @@ const FAQ = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
-        </div>
+        </Layout>
     );
 };
 

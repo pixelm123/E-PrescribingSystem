@@ -1,59 +1,31 @@
-import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import plugin from '@vitejs/plugin-react';
-import fs from 'fs';
-import path from 'path';
-import child_process from 'child_process';
 
-
-import process from 'process';
-
-const baseFolder =
-    process.env.APPDATA !== undefined && process.env.APPDATA !== ''
-        ? `${process.env.APPDATA}/ASP.NET/https`
-        : `${process.env.HOME}/.aspnet/https`;
-
-const certificateArg = process.argv.map(arg => arg.match(/--name=(?<value>.+)/i)).filter(Boolean)[0];
-const certificateName = certificateArg ? certificateArg.groups.value : "e-prescribingsystem.client";
-
-if (!certificateName) {
-    console.error('Invalid certificate name. Run this script in the context of an npm/yarn script or pass --name=<<app>> explicitly.')
-    process.exit(-1);
-}
-
-const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
-const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
-
-if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
-    if (0 !== child_process.spawnSync('dotnet', [
-        'dev-certs',
-        'https',
-        '--export-path',
-        certFilePath,
-        '--format',
-        'Pem',
-        '--no-password',
-    ], { stdio: 'inherit', }).status) {
-        throw new Error("Could not create certificate.");
-    }
-}
-
-// https://vitejs.dev/config/
 export default defineConfig({
     plugins: [plugin()],
-    resolve: {
-        alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
-    },
-    server: {
-        proxy: {
-            
+    build: {
+        outDir: 'dist', // Specify the output directory
+        assetsDir: 'src/styles', // Correct usage, specifying a single directory path
+
+
+
+        sourcemap: true, // Generate source maps
+        manifest: true, // Generate manifest file
+        cssCodeSplit: true, // Split CSS into separate files
+        rollupOptions: {
+            input: {
+                main: './index.html', // Path to your HTML entry file
+                Home: './src/components/Home/Home.jsx', // Path to your Home component
+                About: './src/components/Home/About.jsx', // Path to your About component
+                FAQ: './src/components/Home/FAQ.jsx', // Path to your FAQ component
+                Services: './src/components/Home/Services.jsx', // Path to your Services component
+                Register: './src/components/Home/Register.jsx', // Path to your Register component
+                Login: './src/components/Home/Login.jsx', // Path to your Login component
+                AdminDashboard: './src/components/Admin/AdminDashboard.jsx', // Path to your AdminDashboard component
+                DoctorDashboard: './src/components/Doctor/DoctorDashboard.jsx', // Path to your DoctorDashboard component
+                NurseDashboard: './src/components/Nurse/NurseDashboard.jsx', // Path to your NurseDashboard component
+                PharmacistDashboard: './src/components/Pharmacist/PharmacistDashboard.jsx', // Path to your PharmacistDashboard component
+            },
         },
-        port: 3003,
-        https: {
-            key: fs.readFileSync(keyFilePath),
-            cert: fs.readFileSync(certFilePath),
-        }
-    }
-})
+    },
+});
