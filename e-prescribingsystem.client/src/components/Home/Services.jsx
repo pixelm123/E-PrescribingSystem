@@ -10,10 +10,10 @@ const Services = () => {
                     <h2>Our Services</h2>
                     <div className="service">
                         <div className="service-icon">
-                            <img src="/icon-electronic-prescription.jpg" alt="Electronic Prescription" />
+                            <img src="/electronic-sending-icon.webp" alt="Electronic Prescription" />
                         </div>
                         <div className="service-details">
-                            <h3>Electronic Prescription Creation</h3>
+                            <h3>Electronic Prescription Creations</h3>
                             <p>Create electronic prescriptions quickly and efficiently, eliminating the need for paper prescriptions.</p>
                         </div>
                     </div>

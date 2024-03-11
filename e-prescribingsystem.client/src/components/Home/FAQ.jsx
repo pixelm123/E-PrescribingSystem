@@ -11,8 +11,7 @@ const FAQ = () => {
                     <div className="faq-list">
                         <div className="faq-item">
                             <h3>How do I create a new prescription?</h3>
-                            <p>To create a new prescription, navigate to the prescriptions section in your dashboard and click on the &quot;Create New Prescription&quot; button.
-                            </p>
+                            <p>To create a new prescription, navigate to the prescriptions section in your dashboard and click on the &quot;Create New Prescription&quot; button.</p>
                         </div>
                         <div className="faq-item">
                             <h3>Can I review a patient medication history?</h3>

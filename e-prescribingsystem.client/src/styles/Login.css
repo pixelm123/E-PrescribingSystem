@@ -1,34 +1,45 @@
-/* Login.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
 
 .login-container {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    padding: 40px;
+    border: 1px solid #007bb6; 
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #ffeb3b; 
 }
 
-    .login-container h2 {
-        margin-bottom: 20px;
-        color: #1496e4; /* MediSyncRx blue */
-    }
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #007bb6; 
+    text-align: center;
+}
+
+.login-description {
+    color: #007bb6; 
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        color: #1496e4; /* MediSyncRx blue */
-    }
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #007bb6; 
+}
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #007bb6; 
     border-radius: 5px;
 }
 
@@ -37,27 +48,27 @@ button[type="submit"] {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #1496e4; /* MediSyncRx blue */
+    background-color: #007bb6; 
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-    button[type="submit"]:hover {
-        background-color: #007bb6; /* Darker shade of MediSyncRx blue */
-    }
+button[type="submit"]:hover {
+    background-color: #005a8c; 
+}
 
-/* Additional styles for the link to register */
 .login-container p {
     margin-top: 20px;
     font-size: 14px;
+    text-align: center;
 }
 
-    .login-container p a {
-        color: #1496e4; /* MediSyncRx blue */
-        text-decoration: none;
-    }
+.login-container p a {
+    color: #007bb6; 
+    text-decoration: none;
+}
 
-        .login-container p a:hover {
-            text-decoration: underline;
-        }
+.login-container p a:hover {
+    text-decoration: underline;
+}

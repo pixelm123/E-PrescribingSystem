@@ -1,10 +1,11 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <div className="layout-container">
             <header>
                 <div className="logo">
                     <img src="/Logo.png" alt="Hospital Logo" />
@@ -19,7 +20,9 @@ const Layout = ({ children }) => {
                 </nav>
             </header>
 
-            {children}
+            <main className="main-content">
+                {children}
+            </main>
 
             <footer>
                 <div className="footer-links">

@@ -12,11 +12,13 @@ namespace E_PrescribingSystem.Server.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         [HttpPost("register")]
@@ -27,7 +29,6 @@ namespace E_PrescribingSystem.Server.Controllers
                 return BadRequest(ModelState);
             }
 
-            
             List<string> validRoles = new List<string> { "admin", "doctor", "nurse", "pharmacist" };
             if (!validRoles.Contains(model.Role.ToLower()))
             {
@@ -51,8 +52,13 @@ namespace E_PrescribingSystem.Server.Controllers
                 return BadRequest(result.Errors);
             }
 
-            
             await _userManager.AddToRoleAsync(user, model.Role);
+
+            
+            if (!await _roleManager.RoleExistsAsync("Admin"))
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            }
 
             
             if (_userManager.Users.Count() == 1)
@@ -61,61 +67,8 @@ namespace E_PrescribingSystem.Server.Controllers
             }
 
             
-            if (model.Role.ToLower() == "nurse")
-            {
-                
-                if (string.IsNullOrWhiteSpace(model.HospitalName))
-                {
-                    return BadRequest("Hospital name is required for nurse");
-                }
-
-                
-                if (string.IsNullOrWhiteSpace(model.Department))
-                {
-                    return BadRequest("Department is required for nurse");
-                }
-
-                
-                user.HospitalName = model.HospitalName;
-                user.Department = model.Department;
-            }
-            else if (model.Role.ToLower() == "doctor")
-            {
-                
-                if (string.IsNullOrWhiteSpace(model.HospitalName))
-                {
-                    return BadRequest("Hospital name is required for doctor");
-                }
-
-                
-                if (string.IsNullOrWhiteSpace(model.MedicalSpecialty))
-                {
-                    return BadRequest("Medical specialty is required for doctor");
-                }
-
-                
-                user.HospitalName = model.HospitalName;
-                user.MedicalSpecialty = model.MedicalSpecialty;
-            }
-            else if (model.Role.ToLower() == "pharmacist")
-            {
-                
-                if (string.IsNullOrWhiteSpace(model.PharmacyName))
-                {
-                    return BadRequest("Pharmacy name is required for pharmacist");
-                }
-
-                
-                user.PharmacyName = model.PharmacyName;
-            }
-
-            
-            await _userManager.UpdateAsync(user);
-
-            
-            return Ok("User registered successfully");
+            return RedirectToDashboard(model.Role.ToLower());
         }
-
 
 
         [HttpPost("login")]
@@ -130,7 +83,10 @@ namespace E_PrescribingSystem.Server.Controllers
 
             if (result.Succeeded)
             {
-                return Ok("User logged in successfully");
+                
+                var user = await _userManager.FindByNameAsync(model.Username);
+                var roles = await _userManager.GetRolesAsync(user);
+                return RedirectToDashboard(roles);
             }
             else
             {
@@ -138,31 +94,69 @@ namespace E_PrescribingSystem.Server.Controllers
             }
         }
 
+        private IActionResult RedirectToDashboard(IList<string> roles)
+        {
+            if (roles.Contains("Admin"))
+            {
+                return RedirectToAction("Dashboard", "Admin");
+            }
+            else if (roles.Contains("Doctor"))
+            {
+                return RedirectToAction("Dashboard", "Doctor");
+            }
+            else if (roles.Contains("Nurse"))
+            {
+                return RedirectToAction("Dashboard", "Nurse");
+            }
+            else if (roles.Contains("Pharmacist"))
+            {
+                return RedirectToAction("Dashboard", "Pharmacist");
+            }
+            else
+            {
+                return BadRequest("Invalid user role");
+            }
+        }
+
+
         [HttpGet("dashboard")]
         public IActionResult Dashboard(string userRole)
         {
-            string welcomeMessage;
+            return Ok(new { WelcomeMessage = GetWelcomeMessage(userRole.ToLower()) });
+        }
 
-            switch (userRole.ToLower())
+        private IActionResult RedirectToDashboard(string role)
+        {
+            switch (role.ToLower())
             {
                 case "admin":
-                    welcomeMessage = "Welcome to your Dashboard, Admin!";
-                    break;
+                    return RedirectToAction("Dashboard", "Admin");
                 case "doctor":
-                    welcomeMessage = "Welcome to your Dashboard, Doctor!";
-                    break;
+                    return RedirectToAction("Dashboard", "Doctor");
                 case "nurse":
-                    welcomeMessage = "Welcome to your Dashboard, Nurse!";
-                    break;
+                    return RedirectToAction("Dashboard", "Nurse");
                 case "pharmacist":
-                    welcomeMessage = "Welcome to your Dashboard, Pharmacist!";
-                    break;
+                    return RedirectToAction("Dashboard", "Pharmacist");
                 default:
-                    welcomeMessage = "Welcome to your Dashboard!";
-                    break;
+                    return BadRequest("Invalid user role");
             }
+        }
 
-            return Ok(new { WelcomeMessage = welcomeMessage });
+        private string GetWelcomeMessage(string userRole)
+        {
+            switch (userRole)
+            {
+                case "admin":
+                    return "Welcome to your Dashboard, Admin!";
+                case "doctor":
+                    return "Welcome to your Dashboard, Doctor!";
+                case "nurse":
+                    return "Welcome to your Dashboard, Nurse!";
+                case "pharmacist":
+                    return "Welcome to your Dashboard, Pharmacist!";
+                default:
+                    return "Welcome to your Dashboard!";
+            }
         }
     }
 }

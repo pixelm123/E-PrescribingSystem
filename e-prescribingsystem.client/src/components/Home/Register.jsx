@@ -13,6 +13,9 @@ const Register = () => {
         confirmPassword: '',
         role: ROLES.NURSE,
         hospitalName: '',
+        department: '', 
+        specialty: '',
+        pharmacyName: '', 
     });
     const [errors, setErrors] = useState({});
 
@@ -80,6 +83,18 @@ const Register = () => {
 
         if (userData.role !== ROLES.ADMIN && !userData.hospitalName) {
             errors.hospitalName = 'Hospital name is required';
+        }
+
+        if (userData.role === ROLES.NURSE && !userData.department) {
+            errors.department = 'Department is required for nurses';
+        }
+
+        if (userData.role === ROLES.DOCTOR && !userData.specialty) {
+            errors.specialty = 'Specialty is required for doctors';
+        }
+
+        if (userData.role === ROLES.PHARMACIST && !userData.pharmacyName) {
+            errors.pharmacyName = 'Pharmacy name is required for pharmacists';
         }
 
         return errors;
@@ -152,6 +167,45 @@ const Register = () => {
                                 required
                             />
                             {errors.hospitalName && <span className="error">{errors.hospitalName}</span>}
+                        </div>
+                    )}
+                    {userData.role === ROLES.NURSE && (
+                        <div className="form-group">
+                            <label>Department:</label>
+                            <input
+                                type="text"
+                                name="department"
+                                value={userData.department}
+                                onChange={handleChange}
+                                required
+                            />
+                            {errors.department && <span className="error">{errors.department}</span>}
+                        </div>
+                    )}
+                    {userData.role === ROLES.DOCTOR && (
+                        <div className="form-group">
+                            <label>Specialty:</label>
+                            <input
+                                type="text"
+                                name="specialty"
+                                value={userData.specialty}
+                                onChange={handleChange}
+                                required
+                            />
+                            {errors.specialty && <span className="error">{errors.specialty}</span>}
+                        </div>
+                    )}
+                    {userData.role === ROLES.PHARMACIST && (
+                        <div className="form-group">
+                            <label>Pharmacy Name:</label>
+                            <input
+                                type="text"
+                                name="pharmacyName"
+                                value={userData.pharmacyName}
+                                onChange={handleChange}
+                                required
+                            />
+                            {errors.pharmacyName && <span className="error">{errors.pharmacyName}</span>}
                         </div>
                     )}
                     <button type="submit">Register</button>

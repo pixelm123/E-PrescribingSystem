@@ -3,16 +3,15 @@ import { Link } from 'react-router-dom';
 import Layout from './Layout';
 import "../../styles/Home.css";
 
-
 const Home = () => {
     return (
         <Layout>
             <section className="hero">
+                <img src="/Home.jpg" alt="Home" />
                 <div className="hero-content">
                     <h1>Revolutionize Your Prescription Process</h1>
                     <p>Efficiency, accuracy, and patient safety at your fingertips.</p>
                 </div>
-                <img src="/Home.jpg" alt="Home" />
             </section>
 
             <section className="features">
@@ -27,14 +26,14 @@ const Home = () => {
 
 
                     <div className="feature">
-                        <img src="/icon-for-drug-interaction-check.jpg" alt="Automated Drug Interaction Checks" />
+                        <img src="/drug-interaction-checker.png" alt="Automated Drug Interaction Checks" />
                         <h3>Automated Drug Interaction Checks</h3>
                         <p>Ensure patient safety with automated drug interaction checks.</p>
                     </div>
 
 
                     <div className="feature">
-                        <img src="/icon-medication-history.png" alt="Patient Medication History Access" />
+                        <img src="/treatment-by-medical-history.avif" alt="Patient Medication History Access" />
                         <h3>Patient Medication History Access</h3>
                         <p>Access and review patients medication history for better treatment decisions.</p>
                     </div>
@@ -56,21 +55,21 @@ const Home = () => {
                         <p>Sign in to your account using your credentials.</p>
                     </div>
 
-                    <img src="/Arrow-icon.jpg" alt="Arrow" className="arrow" />
+                    <img src="/icon-red-arrow.png" alt="Arrow" className="arrow" />
 
                     <div className="step">
                         <h3>Step 2: Create Prescription</h3>
                         <p>Create a new prescription for your patient.</p>
                     </div>
 
-                    <img src="/Arrow-icon.jpg" alt="Arrow" className="arrow" />
+                    <img src="/icon-red-arrow.png" alt="Arrow" className="arrow" />
 
                     <div className="step">
                         <h3>Step 3: Verify Information</h3>
                         <p>Review and verify patient information and medication details.</p>
                     </div>
 
-                    <img src="/Arrow-icon.jpg" alt="Arrow" className="arrow" />
+                    <img src="/icon-red-arrow.png" alt="Arrow" className="arrow" />
 
                     <div className="step">
                         <h3>Step 4: Send Prescription</h3>

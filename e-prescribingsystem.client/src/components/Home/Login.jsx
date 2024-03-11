@@ -56,6 +56,7 @@ const Login = () => {
         <Layout>
             <div className="login-container">
                 <h2>Login</h2>
+                <p className="login-description">Enter your credentials to manage prescriptions efficiently and ensure patient care.</p>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Username:</label>

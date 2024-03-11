@@ -1,37 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
 .services {
     padding: 80px;
 }
 
 .services-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0; 
 }
 
     .services-content h2 {
         color: #1496E4;
-        font-size: 36px;
-        margin-bottom: 20px;
+        font-size: 50px;
+        margin-bottom: 40px;
     }
 
 .service {
     display: flex;
-    align-items: center;
-    margin-bottom: 40px;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    padding: 20px;
 }
 
 .service-icon {
     flex-shrink: 0;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
     .service-icon img {
-        width: 50px;
+        width: 100px;
     }
 
 .service-details h3 {
     color: #1496E4;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .service-details p {
@@ -39,3 +51,5 @@
     font-size: 18px;
     line-height: 1.5;
 }
+
+
