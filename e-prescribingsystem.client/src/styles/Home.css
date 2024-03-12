@@ -12,11 +12,11 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #e1f2fc; 
-    padding: 0px 0; 
+    background-color: #e1f2fc;
+    padding: 0px 0;
     display: flex;
-    width: 100%
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -24,11 +24,8 @@ header {
     width: 150px;
     height: auto;
     margin-left: 20px;
-    cursor: pointer; 
+    cursor: pointer;
 }
-
-
-
 
 nav ul {
     list-style-type: none;
@@ -38,7 +35,7 @@ nav ul {
 
     nav ul li {
         display: inline-block;
-        margin-right: 85px; 
+        margin-right: 85px;
     }
 
         nav ul li a {
@@ -49,7 +46,7 @@ nav ul {
         }
 
             nav ul li a:hover {
-                color: #BF1B2C; 
+                color: #BF1B2C;
             }
 
 /* Hero Styles */
@@ -210,8 +207,8 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    width: 100% text-align: center;
-    padding: 0px 0;
+    width: 100%;
+    text-align: center; /* Added this line to center-align text */
 }
 
 .footer-links a {

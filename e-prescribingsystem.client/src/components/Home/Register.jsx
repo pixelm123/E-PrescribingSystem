@@ -13,9 +13,9 @@ const Register = () => {
         confirmPassword: '',
         role: ROLES.NURSE,
         hospitalName: '',
-        department: '', 
+        department: '',
         specialty: '',
-        pharmacyName: '', 
+        pharmacyName: '',
     });
     const [errors, setErrors] = useState({});
 
@@ -107,111 +107,119 @@ const Register = () => {
 
     return (
         <Layout>
-            <div className="register-container">
-                <h2>Register</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label>Email:</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={userData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                        {errors.email && <span className="error">{errors.email}</span>}
+            <div className="register">
+                <div className="register-content">
+                    <div className="about-image">
+                        <img src="/signup.webp" alt="Register" />
                     </div>
-                    <div className="form-group">
-                        <label>Password:</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={userData.password}
-                            onChange={handleChange}
-                            required
-                        />
-                        {errors.password && <span className="error">{errors.password}</span>}
+                    <div className="login-form">
+                        <h2 className="login-title">Register</h2>
+                        <p className="login-description">Enter your information to create an account.</p>
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label>Email:</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={userData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                {errors.email && <span className="error">{errors.email}</span>}
+                            </div>
+                            <div className="form-group">
+                                <label>Password:</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    value={userData.password}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                {errors.password && <span className="error">{errors.password}</span>}
+                            </div>
+                            <div className="form-group">
+                                <label>Confirm Password:</label>
+                                <input
+                                    type="password"
+                                    name="confirmPassword"
+                                    value={userData.confirmPassword}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
+                            </div>
+                            <div className="form-group">
+                                <label>Role:</label>
+                                <select
+                                    name="role"
+                                    value={userData.role}
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    {Object.values(ROLES).map(role => (
+                                        <option key={role} value={role}>{role}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            {userData.role !== ROLES.ADMIN && (
+                                <div className="form-group">
+                                    <label>Hospital Name:</label>
+                                    <input
+                                        type="text"
+                                        name="hospitalName"
+                                        value={userData.hospitalName}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    {errors.hospitalName && <span className="error">{errors.hospitalName}</span>}
+                                </div>
+                            )}
+                            {userData.role === ROLES.NURSE && (
+                                <div className="form-group">
+                                    <label>Department:</label>
+                                    <input
+                                        type="text"
+                                        name="department"
+                                        value={userData.department}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    {errors.department && <span className="error">{errors.department}</span>}
+                                </div>
+                            )}
+                            {userData.role === ROLES.DOCTOR && (
+                                <div className="form-group">
+                                    <label>Specialty:</label>
+                                    <input
+                                        type="text"
+                                        name="specialty"
+                                        value={userData.specialty}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    {errors.specialty && <span className="error">{errors.specialty}</span>}
+                                </div>
+                            )}
+                            {userData.role === ROLES.PHARMACIST && (
+                                <div className="form-group">
+                                    <label>Pharmacy Name:</label>
+                                    <input
+                                        type="text"
+                                        name="pharmacyName"
+                                        value={userData.pharmacyName}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    {errors.pharmacyName && <span className="error">{errors.pharmacyName}</span>}
+                                </div>
+                            )}
+                            <button type="submit">Register</button>
+                        </form>
+                        <div>
+                            <p>Already have an account? <Link to="/login">Login here</Link></p>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label>Confirm Password:</label>
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            value={userData.confirmPassword}
-                            onChange={handleChange}
-                            required
-                        />
-                        {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
-                    </div>
-                    <div className="form-group">
-                        <label>Role:</label>
-                        <select
-                            name="role"
-                            value={userData.role}
-                            onChange={handleChange}
-                            required
-                        >
-                            {Object.values(ROLES).map(role => (
-                                <option key={role} value={role}>{role}</option>
-                            ))}
-                        </select>
-                    </div>
-                    {userData.role !== ROLES.ADMIN && (
-                        <div className="form-group">
-                            <label>Hospital Name:</label>
-                            <input
-                                type="text"
-                                name="hospitalName"
-                                value={userData.hospitalName}
-                                onChange={handleChange}
-                                required
-                            />
-                            {errors.hospitalName && <span className="error">{errors.hospitalName}</span>}
-                        </div>
-                    )}
-                    {userData.role === ROLES.NURSE && (
-                        <div className="form-group">
-                            <label>Department:</label>
-                            <input
-                                type="text"
-                                name="department"
-                                value={userData.department}
-                                onChange={handleChange}
-                                required
-                            />
-                            {errors.department && <span className="error">{errors.department}</span>}
-                        </div>
-                    )}
-                    {userData.role === ROLES.DOCTOR && (
-                        <div className="form-group">
-                            <label>Specialty:</label>
-                            <input
-                                type="text"
-                                name="specialty"
-                                value={userData.specialty}
-                                onChange={handleChange}
-                                required
-                            />
-                            {errors.specialty && <span className="error">{errors.specialty}</span>}
-                        </div>
-                    )}
-                    {userData.role === ROLES.PHARMACIST && (
-                        <div className="form-group">
-                            <label>Pharmacy Name:</label>
-                            <input
-                                type="text"
-                                name="pharmacyName"
-                                value={userData.pharmacyName}
-                                onChange={handleChange}
-                                required
-                            />
-                            {errors.pharmacyName && <span className="error">{errors.pharmacyName}</span>}
-                        </div>
-                    )}
-                    <button type="submit">Register</button>
-                </form>
-                <div>
-                    <p>Already have an account? <Link to="/login">Login here</Link></p>
                 </div>
             </div>
         </Layout>

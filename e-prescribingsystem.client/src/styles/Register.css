@@ -1,70 +1,86 @@
-.register-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+.register {
+    padding: 80px;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-    .register-container h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #1496e4; /* MediSyncRx blue */
+.register-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.about-image {
+    width: 40%;
+    margin-right: 40px;
+}
+
+    .about-image img {
+        width: 100%;
+        border-radius: 10px;
     }
 
-.form-group {
+.login-form {
+    width: 50%;
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text horizontally inside the form */
+}
+
+    .login-form h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+.login-content .login-description {
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align label to the left */
+}
+
     .form-group label {
-        display: block;
-        font-size: 16px;
-        margin-bottom: 5px;
-        color: #1496e4;
+        display: inline-block; /* Change display to inline-block */
+        font-size: 18px;
+        margin-right: 10px; /* Add right margin to separate label from input */
+        vertical-align: middle; /* Align vertically in the middle */
     }
 
-    .form-group input,
-    .form-group select {
-        width: 100%;
+    .form-group input {
+        width: calc(100% - 20px); /* Adjust input width */
         padding: 10px;
         font-size: 16px;
-        border: 1px solid #ccc;
         border-radius: 5px;
+        border: 1px solid #ccc; /* Add border to input */
+        margin-top: 5px;
     }
 
 .error {
-    color: #bf1b2c;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #1496e4;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-    button:hover {
-        background-color: #1285bf;
-    }
-
-.register-container p {
+    color: #ff0000; /* Set error message color to red */
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
-    .register-container p a {
-        color: #1496e4;
-        text-decoration: none;
-    }
+button[type="submit"] {
+    background-color: #1496E4; /* Set button color to a contrasting color */
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
-        .register-container p a:hover {
-            text-decoration: underline;
-        }
+    button[type="submit"]:hover {
+        background-color: #0073e6; /* Set hover color */
+    }
